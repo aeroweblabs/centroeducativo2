@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro de Enlace Educativo San Miguel Teotongo | Excelencia Académica</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,400&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        premium: {
+                            navy: '#050B14',      /* Fondo ultra oscuro profundo */
+                            card: '#0D1527',      /* Azul corporativo de fondo para tarjetas */
+                            gold: '#D4AF37',      /* Oro brillante cepillado */
+                            goldLight: '#F3E5AB', /* Destello oro líquido */
+                            accent: '#1E3A8A'     /* Azul rey brillante para efectos */
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes gradient-border {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .tarjeta-premium {
+            position: relative;
+            background: #0D1527;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .tarjeta-premium::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 24px;
+            padding: 1.5px;
+            background: linear-gradient(45deg, rgba(212, 175, 55, 0.2), rgba(30, 58, 138, 0.2));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+            transition: all 0.4s ease;
+        }
+        .tarjeta-premium:hover::before {
+            background: linear-gradient(45deg, #D4AF37, #1E3A8A, #F3E5AB, #D4AF37);
+            background-size: 200% 200%;
+            animation: gradient-border 3s linear infinite;
+        }
+        .tarjeta-premium:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px -15px rgba(212, 175, 55, 0.15);
+        }
+
+        @keyframes pulso-vip {
+            0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.6); }
+            70% { box-shadow: 0 0 0 20px rgba(212, 175, 55, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+        }
+        .pulso-oro-flotante {
+            animation: pulso-vip 2.5s infinite;
+        }
+    </style>
+</head>
+<body class="bg-premium-navy text-slate-200 font-sans antialiased overflow-x-hidden">
+
+    <header class="sticky top-0 z-50 bg-premium-navy/80 backdrop-blur-xl border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+            
+            <div class="flex items-center gap-4">
+                <div class="bg-white p-1 rounded-xl border border-premium-gold/40 shadow-lg shadow-black/50 shrink-0">
+                    <img src="logo2 centro educativo.png" alt="Escudo Oficial CESMT" class="h-14 w-14 object-contain">
+                </div>
+                
+                <div class="relative pt-5 flex flex-col justify-center">
+                    <div class="absolute top-0 left-0.5 pointer-events-none animate-pulse" style="animation-duration: 3s;">
+                        <i class="fa-solid fa-graduation-cap text-base md:text-lg bg-gradient-to-r from-premium-gold via-premium-goldLight to-premium-gold bg-clip-text text-transparent drop-shadow-[0_0_8px_rgba(212,175,55,0.7)] rotate-[-15deg]"></i>
+                    </div>
+                    
+                    <h1 class="text-xl md:text-2xl font-serif font-black tracking-tight text-white leading-tight">
+                        Centro de Enlace Educativo
+                    </h1>
+                    <p class="text-[11px] md:text-xs uppercase tracking-widest text-premium-gold font-bold mt-0.5">
+                        San Miguel Teotongo
+                    </p>
+                </div>
+            </div>
+            
+            <nav class="hidden lg:flex items-center gap-10 text-xs font-semibold tracking-widest uppercase text-slate-400">
+                <a href="#inicio" class="hover:text-premium-gold transition-colors">Inicio</a>
+                <a href="#oferta" class="hover:text-premium-gold transition-colors">Oferta Educativa</a>
+                <a href="#promociones" class="hover:text-premium-gold transition-colors">Promociones</a>
+                <a href="#contacto" class="hover:text-premium-gold transition-colors">Contacto</a>
+            </nav>
+
+            <div class="shrink-0">
+                <a href="https://wa.me/525545454215" target="_blank" class="inline-flex items-center gap-2 bg-gradient-to-r from-premium-gold via-premium-goldLight to-premium-gold text-premium-navy font-black text-xs tracking-wider uppercase px-4 md:px-6 py-3.5 rounded-xl shadow-lg transition-all transform hover:scale-105 active:scale-95">
+                    <i class="fa-brands fa-whatsapp text-base"></i> <span class="hidden sm:inline">Admisiones Abiertas</span><span class="sm:hidden">Info</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section id="inicio" class="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-16">
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-premium-navy via-premium-navy/95 to-premium-navy/60"></div>
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-premium-accent/20 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-premium-gold/10 rounded-full blur-[150px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12 items-center relative z-10 w-full">
+            <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+                <span class="inline-flex items-center gap-2 py-2 px-4 rounded-xl text-xs font-bold bg-premium-gold/10 text-premium-goldLight border border-premium-gold/30 backdrop-blur-md">
+                    <i class="fa-solid fa-award text-sm text-premium-gold"></i> FORMACIÓN CON VALIDEZ ACADÉMICA OFICIAL
+                </span>
+                <h2 class="text-4xl sm:text-5xl md:text-7xl font-serif font-black tracking-tight text-white leading-tight">
+                    El orgullo de verlos <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-premium-gold via-premium-goldLight to-premium-gold">triunfar en la vida</span>
+                </h2>
+                <p class="text-base md:text-xl text-slate-300 max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
+                    Inscriba a sus hijos en una institución de prestigio. En el Centro de Enlace Educativo aseguramos su porvenir profesional con planes acelerados, licenciaturas y talleres de alta demanda.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 pt-4">
+                    <a href="#oferta" class="bg-gradient-to-r from-premium-gold to-premium-goldLight text-premium-navy font-black px-8 py-5 rounded-xl shadow-2xl shadow-premium-gold/20 hover:opacity-95 transition-all text-center tracking-wide text-sm uppercase">
+                        Ver Oferta Educativa
+                    </a>
+                    <a href="tel:5545454215" class="bg-white/5 hover:bg-white/10 border border-white/10 text-white font-bold px-8 py-5 rounded-xl transition-all text-center inline-flex items-center justify-center gap-3 tracking-wide text-sm">
+                        <i class="fa-solid fa-phone text-premium-gold"></i> Atención Directa: 55 4545 4215
+                    </a>
+                </div>
+            </div>
+
+            <div class="lg:col-span-5 max-w-md mx-auto w-full">
+                <div class="p-3 bg-white/5 border border-white/10 rounded-3xl shadow-2xl shadow-black relative group backdrop-blur-md">
+                    <div class="absolute -inset-2 bg-gradient-to-r from-premium-gold to-premium-accent rounded-3xl blur opacity-30 group-hover:opacity-50 transition-opacity"></div>
+                    <div class="bg-premium-card/90 rounded-2xl p-3 border border-white/5 relative z-10 space-y-3">
+                        <video class="rounded-xl w-full h-auto object-cover shadow-md" autoplay loop muted playsinline>
+                            <source src="WhatsApp Video 2026-07-11 at 2.41.10 PM.mp4" type="video/mp4">
+                            Tu navegador no soporta el formato de video.
+                        </video>
+                        <img src="605724051_864409922620663_5014195079124999363_n_2.jpg" alt="Instalaciones y Oferta de lunas CESMT" class="rounded-xl w-full object-cover shadow-2xl transition-transform duration-500 group-hover:scale-[1.01]">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-gradient-to-b from-premium-navy to-premium-card border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8 text-center md:text-left">
+            <div class="p-6 space-y-3">
+                <i class="fa-solid fa-graduation-cap text-3xl text-premium-gold"></i>
+                <h3 class="text-lg font-bold text-white">Certificación Sin Estrés</h3>
+                <p class="text-sm text-slate-400 font-light">Sistemas diseñados para que concluyan sus estudios de manera eficiente, legal y sin trabas académicas.</p>
+            </div>
+            <div class="p-6 space-y-3 border-y md:border-y-0 md:border-x border-white/5">
+                <i class="fa-solid fa-clock-rotate-left text-3xl text-premium-gold"></i>
+                <h3 class="text-lg font-bold text-white">Horarios a su Medida</h3>
+                <p class="text-sm text-slate-400 font-light">Turnos flexibles matutinos, vespertinos y sabatados pensados para los jóvenes que trabajan o tienen otras actividades.</p>
+            </div>
+            <div class="p-6 space-y-3">
+                <i class="fa-solid fa-user-tie text-3xl text-premium-gold"></i>
+                <h3 class="text-lg font-bold text-white">Docentes de Excelencia</h3>
+                <p class="text-sm text-slate-400 font-light">Profesores altamente comprometidos con el éxito personal, ético y profesional de cada uno de nuestros alumnos.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="oferta" class="py-28 max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto mb-20 space-y-4">
+            <h3 class="text-xs font-bold uppercase tracking-widest text-premium-gold">Plan de Éxito Profesional</h3>
+            <p class="text-3xl sm:text-5xl font-serif font-black text-white tracking-tight">Especialidades Disponibles</p>
+            <div class="w-24 h-1 bg-gradient-to-r from-transparent via-premium-gold to-transparent mx-auto mt-4"></div>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="tarjeta-premium p-8 rounded-3xl flex flex-col justify-between group">
+                <div class="relative z-10">
+                    <div class="w-14 h-14 rounded-xl bg-premium-gold/10 border border-premium-gold/30 flex items-center justify-center text-premium-gold text-2xl mb-8 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Licenciatura en Psicología</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed font-light">Formación universitaria con alto sentido humano. Prepara profesionales capaces de transformar la salud mental en el entorno social.</p>
+                </div>
+                <div class="mt-8 pt-4 border-t border-white/5 flex items-center justify-between relative z-10">
+                    <span class="text-xs font-bold text-premium-gold uppercase tracking-wider">Plan Oficial</span>
+                    <i class="fa-solid fa-arrow-right text-slate-600 group-hover:text-premium-gold transition-colors"></i>
+                </div>
+            </div>
+
+            <div class="tarjeta-premium p-8 rounded-3xl flex flex-col justify-between group">
+                <div class="relative z-10">
+                    <div class="w-14 h-14 rounded-xl bg-premium-gold/10 border border-premium-gold/30 flex items-center justify-center text-premium-gold text-2xl mb-8 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-id-card"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Bachillerato en 6 Meses!!!</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed font-light">Sistema acelerado, completamente sin examen estresante de admisión. Ideal para regularizarse o mayores de edad que buscan avanzar rápido.</p>
+                </div>
+                <div class="mt-8 pt-4 border-t border-white/5 flex items-center justify-between relative z-10">
+                    <span class="text-xs font-bold text-premium-gold uppercase tracking-wider">Certificación Acelerada</span>
+                    <i class="fa-solid fa-arrow-right text-slate-600 group-hover:text-premium-gold transition-colors"></i>
+                </div>
+            </div>
+
+            <div class="tarjeta-premium p-8 rounded-3xl flex flex-col justify-between group">
+                <div class="relative z-10">
+                    <div class="w-14 h-14 rounded-xl bg-premium-gold/10 border border-premium-gold/30 flex items-center justify-center text-premium-gold text-2xl mb-8 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-language"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Dominio de Inglés</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed font-light">Programa intensivo y dinámico. Habla, escribe e interpreta el idioma universal de los negocios para multiplicar las ofertas laborales.</p>
+                </div>
+                <div class="mt-8 pt-4 border-t border-white/5 flex items-center justify-between relative z-10">
+                    <span class="text-xs font-bold text-premium-gold uppercase tracking-wider">Garantía Bilingüe</span>
+                    <i class="fa-solid fa-arrow-right text-slate-600 group-hover:text-premium-gold transition-colors"></i>
+                </div>
+            </div>
+
+            <div class="tarjeta-premium p-8 rounded-3xl flex flex-col justify-between group">
+                <div class="relative z-10">
+                    <div class="w-14 h-14 rounded-xl bg-premium-gold/10 border border-premium-gold/30 flex items-center justify-center text-premium-gold text-2xl mb-8 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-music"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Artes y Música</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed font-light">Talleres prácticos de guitarra, piano, canto y ensambles rítmicos. Estimula la creatividad y disciplina artística con mentores calificados.</p>
+                </div>
+                <div class="mt-8 pt-4 border-t border-white/5 flex items-center justify-between relative z-10">
+                    <span class="text-xs font-bold text-premium-gold uppercase tracking-wider">Talleres de Talento</span>
+                    <i class="fa-solid fa-arrow-right text-slate-600 group-hover:text-premium-gold transition-colors"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="promociones" class="py-28 bg-premium-card border-y border-white/5 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-20 space-y-4">
+                <h3 class="text-xs font-bold uppercase tracking-widest text-premium-gold">Planes de Financiamiento</h3>
+                <p class="text-3xl sm:text-5xl font-serif font-black text-white tracking-tight">Oportunidades Únicas</p>
+                <div class="w-24 h-1 bg-gradient-to-r from-transparent via-premium-gold to-transparent mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8 items-stretch">
+                <div class="bg-premium-navy border border-white/5 p-8 rounded-3xl flex flex-col justify-between">
+                    <div>
+                        <span class="text-[10px] font-black uppercase tracking-widest bg-premium-gold/10 text-premium-gold px-3 py-1 rounded-md border border-premium-gold/20">Ingreso Inmediato</span>
+                        <h4 class="text-2xl font-serif font-bold text-white mt-5">Inscripción 100% Sin Costo</h4>
+                        <p class="text-sm text-slate-400 mt-3 font-light leading-relaxed">Olvídese del pago inicial. Comience el curso regular de idiomas o talleres artísticos pagando solo la primera mensualidad.</p>
+                    </div>
+                    <a href="https://wa.me/525545454215?text=Me%20interesa%20la%20Inscripcion%20Gratis" target="_blank" class="mt-8 block text-center bg-white/5 hover:bg-white/10 text-white font-semibold py-4 rounded-xl text-xs uppercase tracking-wider transition-colors border border-white/10">Consultar Disponibilidad</a>
+                </div>
+
+                <div class="bg-gradient-to-b from-premium-card to-premium-navy border-2 border-premium-gold p-8 rounded-3xl flex flex-col justify-between shadow-2xl shadow-premium-gold/10 relative">
+                    <span class="absolute top-4 right-4 bg-premium-gold text-premium-navy text-[9px] font-black uppercase tracking-wider px-2.5 py-1 rounded-md">Convenio Especial</span>
+                    <div>
+                        <span class="text-[10px] font-black uppercase tracking-widest bg-white/10 text-premium-goldLight px-3 py-1 rounded-md">Paquete Familiar</span>
+                        <h4 class="text-2xl font-serif font-bold text-white mt-5">Beca 2x1 Estudiantes</h4>
+                        <p class="text-sm text-slate-300 mt-3 font-light leading-relaxed">Inscriba a hermanos, familiares o amigos juntos. Pagan la mensualidad de un solo alumno durante el primer bloque modular.</p>
+                    </div>
+                    <a href="https://wa.me/525545454215?text=Me%20interesa%20el%20Plan%202x1" target="_blank" class="mt-8 block text-center bg-gradient-to-r from-premium-gold via-premium-goldLight to-premium-gold text-premium-navy font-black py-4 rounded-xl text-xs uppercase tracking-widest shadow-xl transition-opacity hover:opacity-90">Garantizar Beca Ahora</a>
+                </div>
+
+                <div class="bg-premium-navy border border-white/5 p-8 rounded-3xl flex flex-col justify-between">
+                    <div>
+                        <span class="text-[10px] font-black uppercase tracking-widest bg-premium-gold/10 text-premium-gold px-3 py-1 rounded-md border border-premium-gold/20">Turno Especial</span>
+                        <h4 class="text-2xl font-serif font-bold text-white mt-5">20% Descuento Sabatino</h4>
+                        <p class="text-sm text-slate-400 mt-3 font-light leading-relaxed">Un impulso económico para los alumnos de planes intensivos de fin de semana. Descuento directo en sus primeras mensualidades.</p>
+                    </div>
+                    <a href="https://wa.me/525545454215?text=Me%20interesa%20el%20Descuento%20Sabatino" target="_blank" class="mt-8 block text-center bg-white/5 hover:bg-white/10 text-white font-semibold py-4 rounded-xl text-xs uppercase tracking-wider transition-colors border border-white/10">Consultar Disponibilidad</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contacto" class="bg-premium-navy border-t border-white/5 text-slate-500 pt-20 pb-10 relative">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12 pb-24 border-b border-white/5">
+            <div class="space-y-4">
+                <div class="flex items-center gap-3">
+                    <img src="logo2 centro educativo.png" alt="CESMT Logo Footer" class="h-12 w-auto object-contain bg-white p-0.5 rounded">
+                    <span class="text-white font-serif font-bold text-lg">CESMT</span>
+                </div>
+                <p class="text-xs text-slate-400 leading-relaxed font-light">
+                    Institución educativa enfocada en forjar el camino profesional de nuestra comunidad con responsabilidad académica y excelencia.
+                </p>
+            </div>
+            
+            <div class="space-y-4">
+                <h5 class="text-white font-bold text-xs uppercase tracking-widest text-premium-gold">Líneas Directas de Enlace</h5>
+                <ul class="space-y-3 text-xs text-slate-400">
+                    <li class="flex items-center gap-3">
+                        <i class="fa-solid fa-phone text-premium-gold text-sm"></i>
+                        <a href="tel:5545454215" class="hover:text-white transition-colors">55 4545 4215 / 55 7426 3267</a>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fa-brands fa-whatsapp text-emerald-500 text-sm"></i>
+                        <a href="https://wa.me/525545454215" target="_blank" class="hover:text-white transition-colors">Atención Express vía WhatsApp</a>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fa-solid fa-location-dot text-premium-gold text-sm"></i>
+                        <span class="text-slate-400">San Miguel Teotongo, Iztapalapa, CDMX</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="space-y-4">
+                <h5 class="text-white font-bold text-xs uppercase tracking-widest text-premium-gold">Módulos Administrativos</h5>
+                <p class="text-xs text-slate-400 font-light leading-relaxed">
+                    Lunes a Viernes: 8:00 AM - 7:00 PM<br>
+                    Sábados de Clases: 9:00 AM - 2:00 PM
+                </p>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 relative -mt-14 mb-10 z-20">
+            <div class="bg-[#0A1120] border border-white/10 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl">
+                <div class="flex items-center gap-5 w-full md:w-auto">
+                    <div class="w-12 h-12 rounded-xl bg-white/5 border border-premium-gold/20 flex items-center justify-center text-premium-gold text-xl shrink-0">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-serif font-bold text-lg md:text-xl leading-snug">
+                            ¿Eres estudiante inscrito o buscas cursos específicos?
+                        </h4>
+                        <p class="text-slate-400 text-xs md:text-sm font-light mt-1">
+                            Explora nuestra oferta completa de niveles de Idiomas (A1, A2, B1, B2) y certificaciones modulares.
+                        </p>
+                    </div>
+                </div>
+                <div class="shrink-0 w-full md:w-auto text-right">
+                    <a href="https://aeroweblabs.github.io/cursoscesmt/" class="inline-flex items-center justify-center gap-2 bg-[#E5C158] hover:bg-premium-gold text-premium-navy font-black text-xs tracking-widest uppercase px-6 py-4 rounded-xl shadow-lg w-full md:w-auto transition-colors">
+                        PAGINA CURSOS <i class="fa-solid fa-arrow-right-to-bracket text-sm"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 pt-2 flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] tracking-wider uppercase">
+            <p>&copy; 2026 Centro de Enlace Educativo San Miguel Teotongo. Todos los derechos reservados.</p>
+            <p class="font-bold text-slate-400">Desarrollo Web de Alta Gama</p>
+        </div>
+
+        <a href="https://wa.me/525545454215?text=Hola!%20Me%20interesa%20recibir%20informaci%C3%B3n" 
+           target="_blank" 
+           class="pulso-oro-flotante fixed bottom-6 right-6 z-50 bg-gradient-to-r from-premium-gold to-premium-goldLight text-premium-navy w-16 h-16 rounded-full flex items-center justify-center text-2xl shadow-2xl transition-transform hover:scale-110"
+           title="Inicie sus informes de inmediato">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </footer>
+
+</body>
+</html>
